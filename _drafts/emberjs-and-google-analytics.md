@@ -1,0 +1,3 @@
+---
+Uygulamamıza [Google Analytics](http://www.google.com/analytics/) eklemek istiyorsanız Ember.js'ın resmi sitesinde önerilen [yöntemi](http://emberjs.com/guides/cookbook/helpers_and_components/adding_google_analytics_tracking) uygulamanız yeterli olacaktır. Biraz daha derine indiğiniz zaman şöyle bir ihtiyaç doğduğunu fark edeceksiniz kendi bilgisayarınızda çalışırken analitik kodunu uygulamanın içine enjekte etmemize gerek yok. Hatta bu durum sizin veya pazarlama bölümünün yapacağı analizlerin daha temiz olması için önemli bir hal almaya başlayacak.
+---
