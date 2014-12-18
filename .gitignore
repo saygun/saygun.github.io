@@ -1,0 +1,6 @@
+# Ignore bundler config.
+/.bundle
+
+# Mac OS X garbage
+.DS_Store
+
