@@ -15,7 +15,7 @@ Ember.js uygulama başlamadan önce farklı bileşenleri barından `container` o
 
 uygulama dosya hiyerarşisinde **initializers** klasörü altına **analytics.js** dosyası oluşturacağız. ember-cli'ın bize sağladığı [generator](http://www.ember-cli.com/#generators-and-blueprints) ile initializer oluşturmak için: `ember g initializer analytics` kodunu terminalde çalıştırmamız yeterli olacaktır.
 
-{% highlight javascript %}
+```javascript
 import ENV from 'app/config/environment';
 
 export var initialize = function(container, application) {
@@ -51,7 +51,7 @@ export default {
   name: 'analytics',
   initialize: initialize
 };
-{% endhighlight %}
+```
 
 Uygulama `production` ortamında çalışmadığı sürece Google analitik yüklenmeyecek fakat uygulama içinde ki kodu değiştirmemek ve hata almamamız için `ga` fonksiyonunu `window` objesine boş fonksiyon olarak atıyoruz.
 
@@ -59,7 +59,7 @@ Google analitik asenkron olarak yükleneceğinden `application.deferReadiness()`
 
 Uygulama ilk çalıştığında `ApplicationRoute` aktif hale gelip application templateini render edecek. Böylece analitik kodunu `ApplicationRoute` içine koyarsak kullanıcılarımızın hangi sayfalarına gittiğini kolaylıkla analiz edebiliriz
 
-{% highlight javascript %}
+```javascript
 import Em from 'ember';
 
 export default Em.Route.extend({
@@ -71,13 +71,13 @@ export default Em.Route.extend({
     }
   }
 });
-{% endhighlight %}
+```
 
 Yukarıdaki kod sayesinde uygulamada hangi her bir `route` ziyaret edildiğinde url Google analitiğe gönderilmiş olacak.
 
 `environment` değişkeninde Google analitikten aldığımız id yi nasıl sakladığımızı merak edenler için aşağıda paylaşıyorum (Diğer uygulama ortam değişkenlerini bir karışıklık olmasın diye siliyorum)
 
-{% highlight javascript %}
+```javascript
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'app',
@@ -109,4 +109,4 @@ module.exports = function(environment) {
 
   return ENV;
 };
-{% endhighlight %}
+```
